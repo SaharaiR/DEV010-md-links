@@ -1,5 +1,5 @@
-const { default: mdLinks } = require("./mdLinks");
+const mdLinks = require('./mdLinks');
 
-module.exports = () => {
-  mdLinks;
-};
+module.exports = mdLinks;
+
+mdLinks();
