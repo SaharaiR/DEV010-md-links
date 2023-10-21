@@ -4,5 +4,10 @@
   },
   "parserOptions": {
     "ecmaVersion": 8
+  },
+  "extends": ["airbnb"],
+  "rules": {
+    "linebreak-style": "off",
+    "no-console": "off"
   }
 }
