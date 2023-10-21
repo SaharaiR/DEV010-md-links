@@ -12,5 +12,9 @@
   "dependencies": {
     "@markdown-links/md-links": "^1.0.0",
     "markdown-it": "^13.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.52.0",
+    "eslint-config-airbnb": "^19.0.4"
   }
 }
