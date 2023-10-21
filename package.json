@@ -11,7 +11,10 @@
   },
   "dependencies": {
     "@markdown-links/md-links": "^1.0.0",
-    "markdown-it": "^13.0.2"
+    "dom-parser": "^0.1.6",
+    "jsdom": "^22.1.0",
+    "markdown-it": "^13.0.2",
+    "showdown": "^2.1.0"
   },
   "devDependencies": {
     "eslint": "^8.52.0",
