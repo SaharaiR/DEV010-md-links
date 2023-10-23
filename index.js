@@ -4,16 +4,24 @@ const fileExists = require('./lib/fileExists');
 const isMarkdown = require('./lib/isMarkdown');
 const readingFile = require('./lib/readingFile');
 const extractLinks = require('./lib/extractLinks');
+const statusLinks = require('./lib/statusLinks');
 
-function mdLinks(path) {
+function mdLinks(path, validate) {
   // console.log('path: ' + path);
   const route = absolutePath(path);
+  if (!validate || validate === undefined) {
+    return fileExists(route)
+      .then(() => isMarkdown(route))
+      .then(() => readingFile(route))
+      .then((content) => extractLinks(content, route));
+  }
   return fileExists(route)
     .then(() => isMarkdown(route))
     .then(() => readingFile(route))
-    .then((content) => extractLinks(content, route));
+    .then((content) => extractLinks(content, route))
+    .then((links) => statusLinks(links, route));
 }
-mdLinks('./ejemplo1.md')
+mdLinks('./ejemplo1.md', true)
   .then((links) => {
     console.log(links);
   })

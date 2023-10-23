@@ -1,5 +1,4 @@
 const { describe, it, expect } = require('@jest/globals');
-const path = require('node:path');
 const absolutePath = require('../lib/absolutePath');
 
 describe('absolutePath()', () => {
