@@ -21,7 +21,15 @@ function mdLinks(path, validate) {
     .then((content) => extractLinks(content, route))
     .then((links) => statusLinks(links, route));
 }
+
 mdLinks('./ejemplo1.md', true)
+  .then((links) => {
+    console.log(links);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+mdLinks('./ejemplo1.md', false)
   .then((links) => {
     console.log(links);
   })
