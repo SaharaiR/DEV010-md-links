@@ -5,22 +5,22 @@ const expectLinks = [
   {
     url: 'https://www.google.com/',
     text: 'Enlace a Google',
-    file: 'C:\\Users\\Admin\\documents\\github\\dev010-md-links\\ejemplo1.md',
+    file: 'C:\\Users\\Admin\\documents\\github\\dev010-md-links\\fileTest.md',
   },
   {
     url: 'https://es.wikipedia.org/',
     text: 'Enlace a Wikipedia',
-    file: 'C:\\Users\\Admin\\documents\\github\\dev010-md-links\\ejemplo1.md',
+    file: 'C:\\Users\\Admin\\documents\\github\\dev010-md-links\\fileTest.md',
   },
   {
     url: 'https://github.com/',
     text: 'Enlace a GitHub',
-    file: 'C:\\Users\\Admin\\documents\\github\\dev010-md-links\\ejemplo1.md',
+    file: 'C:\\Users\\Admin\\documents\\github\\dev010-md-links\\fileTest.md',
   },
 ];
 
 describe('mdLinks', () => {
-  it('debería resolver un arreglo con 3 links para un archivo .md con 3 links', () => mdLinks('ejemplo1.md').then((result) => {
+  it('Debería resolver un arreglo con 3 links para un archivo .md con 3 links', () => mdLinks('fileTest.md', false).then((result) => {
     expect(result).toEqual(expectLinks);
   }));
 });
