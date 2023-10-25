@@ -22,20 +22,29 @@ function mdLinks(path, validate) {
     .then((links) => statusLinks(links, route));
 }
 
-mdLinks('./ejemplo1.md', true)
+/* mdLinks('./ejemplo1.md', false)
+  .then((links) => {
+    console.log(links);
+  })
+  .catch((err) => {
+    console.error(err.message);
+  }); */
+mdLinks('./fileTest.md', true)
+  .then((links) => {
+    console.log(links);
+  })
+  .catch((error) => {
+    console.error(error.message);
+  });
+/* mdLinks('./README.md', true)
   .then((links) => {
     console.log(links);
   })
   .catch((error) => {
     console.error(error);
-  });
-mdLinks('./ejemplo1.md', false)
-  .then((links) => {
-    console.log(links);
-  })
-  .catch((error) => {
-    console.error(error);
-  });
+  }); */
+
+module.exports = mdLinks;
 
 /* function askPath() {
   /* Crear la interfaz READLINE para poder insertar la dirección desde consola con su
@@ -66,4 +75,3 @@ mdLinks('./ejemplo1.md', false)
 }
 
 askPath(); */
-module.exports = mdLinks;
