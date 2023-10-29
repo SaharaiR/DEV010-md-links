@@ -1,10 +1,31 @@
-// const readline = require('readline');
+#!/usr/bin/env node
+// linea shebang
+const readline = require('readline');
 const absolutePath = require('./lib/absolutePath');
 const fileExists = require('./lib/fileExists');
 const isMarkdown = require('./lib/isMarkdown');
 const readingFile = require('./lib/readingFile');
 const extractLinks = require('./lib/extractLinks');
 const statusLinks = require('./lib/statusLinks');
+const statsLinks = require('./lib/statsLinks');
+
+let valid = false;
+let stadistcs = false;
+const argUser = process.argv[2];
+const argUserBoth = process.argv[3];
+switch (argUser) {
+  case '--validate':
+    valid = true;
+    if (argUserBoth === '--stats') { stadistcs = true; }
+    break;
+  case '--stats':
+    stadistcs = true;
+    break;
+  default:
+    valid = false;
+    stadistcs = false;
+    break;
+}
 
 function mdLinks(path, validate) {
   // console.log('path: ' + path);
@@ -22,27 +43,27 @@ function mdLinks(path, validate) {
     .then((links) => statusLinks(links, route));
 }
 
-/* mdLinks('./ejemplo1.md', false)
-  .then((links) => {
-    console.log(links);
-  })
-  .catch((err) => {
-    console.error(err.message);
-  }); */
-mdLinks('./fileTest.md', true)
-  .then((links) => {
-    console.log(links);
-  })
-  .catch((error) => {
-    console.error(error.message);
+/* Crear la interfaz READLINE para poder insertar la dirección desde consola con su
+    entrada y salida, se usa RL.QUESTION para hacer la pregunta al usuario */
+function askPath() {
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
   });
-/* mdLinks('./README.md', true)
-  .then((links) => {
-    console.log(links);
-  })
-  .catch((error) => {
-    console.error(error);
-  }); */
+  rl.question('Ingresa la ruta del archivo: ', (filePath) => {
+    rl.close();
+    mdLinks(filePath, valid)
+      .then((links) => {
+        statsLinks(links, stadistcs, valid);
+        console.log(links);
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+  });
+}
+
+askPath();
 
 module.exports = mdLinks;
 
@@ -53,9 +74,6 @@ module.exports = mdLinks;
     input: process.stdin,
     output: process.stdout,
   });
-  rl.question('Ingresa la ruta del archivo: ', (filePath) => {
-    mdLinks(filePath);
-    rl.close();
     /* // Creamos promesa para esperar que el usuario teclee la ruta del archivo
     const getPathFile = () => new Promise((resolve) => {
       rl.question('Ingresa la ruta del archivo: ', (filePath) => {
@@ -75,3 +93,25 @@ module.exports = mdLinks;
 }
 
 askPath(); */
+
+/* mdLinks('./ejemplo1.md', false)
+  .then((links) => {
+    console.log(links);
+  })
+  .catch((err) => {
+    console.error(err.message);
+  }); */
+/* mdLinks('./ejemplo1.md', true)
+  .then((links) => {
+    console.log(links);
+  })
+  .catch((error) => {
+    console.error(error.message);
+  });
+/* mdLinks('./README.md', true)
+  .then((links) => {
+    console.log(links);
+  })
+  .catch((error) => {
+    console.error(error);
+  }); */
