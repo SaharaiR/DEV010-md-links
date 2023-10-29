@@ -1,5 +1,5 @@
 {
-  "name": "md-links",
+  "name": "md-linkify",
   "version": "0.1.0",
   "engines": {
     "node": ">=16.x"
@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "jsdom": "^22.1.0",
+    "minimist": "^1.2.8",
     "showdown": "^2.1.0"
   },
   "devDependencies": {
@@ -20,7 +21,16 @@
     "jest": "^29.7.0"
   },
   "scripts": {
+    "start": "node app.js",
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch"
+  },
+  "bin": { 
+    "md-linkify": "./index.js" 
+  },
+  "author": {
+    "name": "Saharai Rodriguez Hernandez",
+    "email": "sahararod@gmail.com",
+    "url": "https://github.com/SaharaiR"
    }
 }
