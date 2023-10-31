@@ -1,4 +1,3 @@
-const { describe, it, expect } = require('@jest/globals');
 const isMarkdown = require('../lib/isMarkdown');
 
 describe('isMarkdown()', () => {

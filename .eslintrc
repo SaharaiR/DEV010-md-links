@@ -8,6 +8,9 @@
   "extends": ["airbnb"],
   "rules": {
     "linebreak-style": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "no-global-assign": "off",
+    "no-undef": "off",
+    "prefer-promise-reject-errors": "off"
   }
 }

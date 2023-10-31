@@ -1,4 +1,3 @@
-const { describe, it, expect } = require('@jest/globals');
 const fs = require('node:fs');
 const extractLinks = require('../lib/extractLinks');
 
