@@ -46,7 +46,7 @@ describe('mdLinks', () => {
     expect(result).toEqual(expectLinks);
   }));
 
-  it('debería validar los enlaces cuando se pasa --validate', () => {
+  it('Debería validar los enlaces cuando se pasa --validate', () => {
     const filePath = './fileTest.md';
 
     return mdLinks(filePath, true)
@@ -58,24 +58,34 @@ describe('mdLinks', () => {
         throw err;
       });
   });
-
-/* it('debería retornar estadísticas cuandoo sepasa --stats', () => {
-    const filePath = './fileTest.md';
-
-    return mdLinks(filePath, false, true)
-      .then((links) => {
-        expect(links.stats).toBeDefined();
-        expect(links.stats).toEqual(expect.any(Object));
-      })
-      .catch((err) => {
-        throw err;
-      });
-  }); */
 });
 
-/* describe('mdLinks', () => {
-  it('Debería resolver un arreglo con 3 links para un archivo .md con 3 links
-  con su status y mensaje', () => mdLinks('fileTest.md', true).then((result) => {
-    expect(result).toEqual(expectLinksValidate);
-  }));
-}); */
+/* el metodo BEFOREEACH permite configurar el estado antes de cada prueba, en esta caso que se
+hace mock a processArgs. Aisla cada prueba */
+describe('Argumentos recibidos', () => {
+  beforeEach(() => {
+    mdLinks.processArgs = jest.fn();
+    mdLinks.processArgs.mockReturnValue({
+      validate: true,
+      stats: true,
+    });
+    mdLinks.validate = true;
+    mdLinks.stats = true;
+  });
+
+  it('Deberia retornar TRUE en validate cuando se use el argumento --validate', () => {
+    mdLinks.processArgs(['node', 'mdLinks', '--validate']);
+    expect(mdLinks.validate).toBe(true);
+  });
+
+  it('Deberia retornar TRUE en stats cuando se use el argumento --stats', () => {
+    mdLinks.processArgs(['node', 'mdLinks', '--stats']);
+    expect(mdLinks.stats).toBe(true);
+  });
+
+  it('Deberia retornar TRUE en stats y validate cuando se usen los dos argumentos', () => {
+    mdLinks.processArgs(['node', 'mdLinks', '--validate', '--stats']);
+    expect(mdLinks.validate).toBe(true);
+    expect(mdLinks.stats).toBe(true);
+  });
+});
