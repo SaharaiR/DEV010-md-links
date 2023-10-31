@@ -1,4 +1,3 @@
-const { describe, it, expect } = require('@jest/globals');
 const readingFile = require('../lib/readingFile');
 
 describe('readingFile', () => {
