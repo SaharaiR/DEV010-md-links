@@ -61,4 +61,4 @@ Después te pide ingresar la ruta del archivo a inspeccionar.
 
 ## 7. Ejemplo
 
-  ## [Demo](demo-md-linkify - Watch Video)
+ ![Demo md-linkify](./demoSC.png)
