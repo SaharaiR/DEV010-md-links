@@ -50,7 +50,7 @@ function askPath() {
     input: process.stdin,
     output: process.stdout,
   });
-  rl.question('Ingresa la ruta del archivo: ', (filePath) => {
+  rl.question('Enter file path: ', (filePath) => {
     rl.close();
     mdLinks(filePath, valid)
       .then((links) => {
