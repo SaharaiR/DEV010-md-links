@@ -61,4 +61,11 @@ Después te pide ingresar la ruta del archivo a inspeccionar.
 
 ## 7. Ejemplo
 
-  ![Demo](<div style="position: relative; padding-bottom: 56.074766355140184%; height: 0;"><iframe src="https://www.loom.com/embed/f2276bb1bb2f4de59d23c2baf02db6cc?sid=4629cab7-ce66-4d65-97e1-02a398223988" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>)
+  ## [Demo](<div>
+    <a href="https://www.loom.com/share/f2276bb1bb2f4de59d23c2baf02db6cc">
+      <p>demo-md-linkify - Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/f2276bb1bb2f4de59d23c2baf02db6cc">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/f2276bb1bb2f4de59d23c2baf02db6cc-with-play.gif">
+    </a>
+  </div>)
