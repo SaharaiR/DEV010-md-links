@@ -31,8 +31,8 @@ describe('statsLinks', () => {
       statsLinks(fakeLinks, true, true);
       resolve();
     }).then(() => {
-      expect(consoleSpy).toHaveBeenCalledWith('Unicos: 2');
-      expect(consoleSpy).toHaveBeenCalledWith('Repetidos: 1');
+      expect(consoleSpy).toHaveBeenCalledWith('Unique: 2');
+      expect(consoleSpy).toHaveBeenCalledWith('Repeat: 1');
       expect(consoleSpy).toHaveBeenCalledWith('Links OK: 2');
       expect(consoleSpy).toHaveBeenCalledWith('Links Fail: 1');
       expect(consoleSpy).toHaveBeenCalledWith('Total: 3');
@@ -46,8 +46,8 @@ describe('statsLinks', () => {
       statsLinks(fakeLinks, true, false);
       resolve();
     }).then(() => {
-      expect(consoleSpy).toHaveBeenCalledWith('Unicos: 2');
-      expect(consoleSpy).toHaveBeenCalledWith('Repetidos: 1');
+      expect(consoleSpy).toHaveBeenCalledWith('Unique: 2');
+      expect(consoleSpy).toHaveBeenCalledWith('Repeat: 1');
       expect(consoleSpy).toHaveBeenCalledWith('Total: 3');
     });
   });
