@@ -18,21 +18,21 @@
 Los archivos Markdown tienen las extensiones .md o .markdown y se pueden editar con cualquier editor de texto plano como Bloc de notas en Windows o TextEdit en Mac.
 
 Tienen varias ventajas:
-*Son de fácil lectura. Su sintaxis es sencilla aun cuando no está procesada.
-*Son de fácil escritura.
-*Son multiplataforma.
-*Generan código HTML válido.
-*Al ser de texto plano son ligeros.
+* Son de fácil lectura. Su sintaxis es sencilla aun cuando no está procesada.
+* Son de fácil escritura.
+* Son multiplataforma.
+* Generan código HTML válido.
+* Al ser de texto plano son ligeros.
 
 ## 2. Resumen del proyecto
 
 Esta librería md-linkify es una utilidad de línea de comandos para analizar archivos Markdown e inspeccionar sus enlaces.
-*Audita enlaces rotos. Verifica el estado de los enlaces e indica cuáles son válidos y cuáles están rotos.
-*Obtiene estadísticas de los enlaces únicos y repetidos.
-*Puedes validar enlaces antes de hacer publicaciones.
-*Encuentra enlaces repetidos.
-*Fácil de usar, la interfaz de línea de comandos hace que sea sencillo escanear sus archivos.
-*Puede personaliar las estadistícas a mostrar.
+* Audita enlaces rotos. Verifica el estado de los enlaces e indica cuáles son válidos y cuáles están rotos.
+* Obtiene estadísticas de los enlaces únicos y repetidos.
+* Puedes validar enlaces antes de hacer publicaciones.
+* Encuentra enlaces repetidos.
+* Fácil de usar, la interfaz de línea de comandos hace que sea sencillo escanear sus archivos.
+* Puede personaliar las estadistícas a mostrar.
 
 ## 3. Consideraciones técnicas
 
@@ -61,4 +61,4 @@ Después te pide ingresar la ruta del archivo a inspeccionar.
 
 ## 7. Ejemplo
 
-  ![Demo](https://www.loom.com/share/f2276bb1bb2f4de59d23c2baf02db6cc?sid=162fffaf-8220-48e9-b15a-eca736810d71)
+  ![Demo](<div style="position: relative; padding-bottom: 56.074766355140184%; height: 0;"><iframe src="https://www.loom.com/embed/f2276bb1bb2f4de59d23c2baf02db6cc?sid=4629cab7-ce66-4d65-97e1-02a398223988" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>)
