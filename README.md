@@ -61,11 +61,4 @@ Después te pide ingresar la ruta del archivo a inspeccionar.
 
 ## 7. Ejemplo
 
-  ## [Demo](<div>
-    <a href="https://www.loom.com/share/f2276bb1bb2f4de59d23c2baf02db6cc">
-      <p>demo-md-linkify - Watch Video</p>
-    </a>
-    <a href="https://www.loom.com/share/f2276bb1bb2f4de59d23c2baf02db6cc">
-      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/f2276bb1bb2f4de59d23c2baf02db6cc-with-play.gif">
-    </a>
-  </div>)
+  ## [Demo](demo-md-linkify - Watch Video)
